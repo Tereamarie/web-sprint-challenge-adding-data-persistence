@@ -1,9 +1,8 @@
 const express = require('express');
 const morgan = require("morgan");
-const projectRouter = require("./routers/project")
-const resourceRouter = require("./routers/resources")
-const taskRouter = require("./routers/task")
-
+//const projectRouter = require("./routers/project")
+//const resourceRouter = require("./routers/resources")
+//const taskRouter = require("./routers/task")
 const server = express();
 
 
@@ -11,9 +10,10 @@ const server = express();
 server.use(morgan("dev"));
 
 //Converts to json objects
-server.use(projectRouter)
-server.use(resourceRouter)
-server.use(taskRouter)
+server.use(express.json());
+//server.use(projectRouter)
+//server.use(resourceRouter)
+//server.use(taskRouter)
 
 //Root route
 server.get("/", (req, res) =>{
